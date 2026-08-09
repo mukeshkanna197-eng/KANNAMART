@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Login {
+    public static void login(ArrayList<User> users, Scanner sc) {
+
+        System.out.println("\n===== KannaMart Login =====");
+
+        System.out.print("Enter Email: ");
+        String email = sc.nextLine();
+
+        System.out.print("Enter Password: ");
+        String password = sc.nextLine();
+
+        for (User user : users) {
+            if (user.email.equalsIgnoreCase(email)
+                    && user.password.equals(password)) {
+
+                System.out.println("Login Successful!");
+                System.out.println("Welcome " + user.email);
+                return;
+            }
+        }
+
+        System.out.println("Invalid Email or Password!");
+    }
+}
