@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Registration {
+    public static void register(ArrayList<User> users, Scanner sc) {
+        System.out.println("\n===== KannaMart Registration =====");
+
+        System.out.print("Enter Email: ");
+        String email = sc.nextLine();
+
+        for (User user : users) {
+            if (user.email.equalsIgnoreCase(email)) {
+                System.out.println("Email already registered!");
+                return;
+            }
+        }
+
+        System.out.print("Enter Password: ");
+        String password = sc.nextLine();
+
+        users.add(new User(email, password));
+
+        System.out.println("Registration Successful!");
+    }
+}
