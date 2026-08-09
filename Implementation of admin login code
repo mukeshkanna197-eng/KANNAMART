@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class AdminLogin {
+    static String adminEmail = "MKmart@gmail.com";
+    static String adminPassword = "admin123";
+     public static void login(Scanner sc) {
+
+        System.out.println("\n===== Admin Login =====");
+
+        System.out.print("Enter Admin Email: ");
+        String email = sc.nextLine();
+
+        System.out.print("Enter Admin Password: ");
+        String password = sc.nextLine();
+
+        if (email.equalsIgnoreCase(adminEmail)
+                && password.equals(adminPassword)) {
+
+            System.out.println("Admin Login Successful!");
+
+        } else {
+
+            System.out.println("Invalid Admin Credentials!");
+        }
+    }
+}
